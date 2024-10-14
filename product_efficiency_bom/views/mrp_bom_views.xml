@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Heredar la vista de formulario de mrp.bom -->
+    <record id="view_mrp_bom_form_inherit_efficiency" model="ir.ui.view">
+        <field name="name">mrp.bom.form.inherit.efficiency</field>
+        <field name="model">mrp.bom</field>
+        <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Añadir el campo 'efficiency' en la lista de componentes -->
+            <xpath expr="//field[@name='bom_line_ids']/tree" position="inside">
+                <field name="efficiency"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

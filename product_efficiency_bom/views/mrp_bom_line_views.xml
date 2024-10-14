@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Vista de árbol (lista) -->
-    <record id="view_mrp_bom_line_tree_inherit_efficiency" model="ir.ui.view">
-        <field name="name">mrp.bom.line.tree.inherit.efficiency</field>
-        <field name="model">mrp.bom.line</field>
-        <field name="inherit_id" ref="mrp.mrp_bom_line_tree_view"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='product_qty']" position="after">
-                <field name="efficiency"/>
-            </xpath>
-        </field>
-    </record>
-
-    <!-- Vista de formulario -->
+    <!-- Heredar la vista de formulario de mrp.bom.line -->
     <record id="view_mrp_bom_line_form_inherit_efficiency" model="ir.ui.view">
         <field name="name">mrp.bom.line.form.inherit.efficiency</field>
         <field name="model">mrp.bom.line</field>
-        <field name="inherit_id" ref="mrp.mrp_bom_line_form_view"/>
+        <field name="inherit_id" ref="mrp.mrp_bom_line_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='product_qty']" position="after">
+            <!-- Añadir el campo 'efficiency' al grupo donde está 'product_qty' -->
+            <xpath expr="//group/field[@name='product_qty']" position="after">
                 <field name="efficiency"/>
             </xpath>
         </field>
