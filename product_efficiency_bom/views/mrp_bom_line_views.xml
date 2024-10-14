@@ -6,8 +6,8 @@
         <field name="model">mrp.bom.line</field>
         <field name="inherit_id" ref="mrp.mrp_bom_line_view_form"/>
         <field name="arch" type="xml">
-            <!-- Añadir el campo 'efficiency' al grupo donde está 'product_qty' -->
-            <xpath expr="//group/field[@name='product_qty']" position="after">
+            <!-- Añadir el campo 'efficiency' después del div que contiene 'product_qty' -->
+            <xpath expr="//div[field[@name='product_qty']]" position="after">
                 <field name="efficiency"/>
             </xpath>
         </field>
